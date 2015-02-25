@@ -11,6 +11,8 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -41,3 +43,7 @@ gem 'domp'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
