@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   def self.create_from_omniauth(params)
     attributes = {
       email: params['info']['email'],
-      password: Devise.friendly_token
+      password: Devise.friendly_token,
     }
 
     create(attributes)
