@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20150226221038) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "type"
-    t.integer  "guestlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
