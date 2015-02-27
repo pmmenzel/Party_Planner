@@ -27,6 +27,8 @@ gem 'devise'
 
 gem 'domp'
 
+gem 'awesome_print'
+
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"

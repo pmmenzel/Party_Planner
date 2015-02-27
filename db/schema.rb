@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225020619) do
+ActiveRecord::Schema.define(version: 20150226221038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,31 @@ ActiveRecord::Schema.define(version: 20150225020619) do
   end
 
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
+
+  create_table "events", force: true do |t|
+    t.datetime "date"
+    t.string   "location"
+    t.boolean  "public_party"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "guestlists", force: true do |t|
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.integer  "quantity"
+    t.text     "item_description"
+    t.string   "type"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_authentications", force: true do |t|
     t.integer  "user_id"
@@ -49,6 +74,9 @@ ActiveRecord::Schema.define(version: 20150225020619) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
