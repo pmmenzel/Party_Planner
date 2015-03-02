@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 20150226221038) do
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
 
   create_table "events", force: true do |t|
+    t.string   "name"
     t.datetime "date"
     t.string   "location"
     t.boolean  "public_party"
     t.integer  "user_id"
+    t.integer  "guestlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
