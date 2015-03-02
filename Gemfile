@@ -34,3 +34,7 @@ gem 'awesome_print'
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
