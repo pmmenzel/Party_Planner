@@ -1,4 +1,4 @@
 class Guestlist < ActiveRecord::Base
-  has_many :users
-  belongs_to :event
+	has_one :event
+  has_many :users, through: :event
 end

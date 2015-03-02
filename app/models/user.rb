@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :events
-  has_and_belongs_to_many :guestlist
+  has_many :guestlists, through: :events
 
   def self.create_from_omniauth(params)
     attributes = {
