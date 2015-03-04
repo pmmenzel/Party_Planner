@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root to: "users#index"
 
   resources :users, except: [:new, :create, :destroy] do
-    resources :events
+    resources :events do
+      resources :items
+      resources :guestlist, except: [:index]
+    end
   end
 
 
