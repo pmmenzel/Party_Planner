@@ -40,5 +40,3 @@ class EventsController < ApplicationController
   end
 
 end
-
-
