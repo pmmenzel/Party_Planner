@@ -1,0 +1,17 @@
+<%= form_for @event, url: {action: "create"} do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :date %>
+<%= f.datetime_select :date %>
+
+<%= f.label :location %>
+<%= f.text_field :location %>
+
+<%= f.label :public_party %>
+<%= f.radio_button :public_party, "0" %>
+<%= f.radio_button :public_party, "1" %>
+
+<%= f.submit "Create" %>
+<% end %>

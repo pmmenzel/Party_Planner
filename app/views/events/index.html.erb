@@ -1,0 +1,8 @@
+<h1>here</h1>
+
+<% @events.each do |event| %>
+<%= event.name %><br/>
+<button ><%= link_to "Delete Event", user_event_path(event.user, event), :method => :delete %></button>
+<button ><%= link_to "Edit Event", edit_user_event_path(event.user, event), :method => :get %></button>
+
+<% end %>
