@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root to: "users#index"
 
-  resources :users, except: [:new, :create, :destroy]
+  resources :users, except: [:new, :create, :destroy] do
+    resources :events
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
