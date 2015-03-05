@@ -1,2 +1,6 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.first_name %> Profile</h1>
+<% @user.events.each do |event| %>
+<h3><%= link_to event.name, user_event_path(event.user, event) %></h3>
+<td><%= event.date %></td>
+<td><%= event.location %></td>
+<% end %>
