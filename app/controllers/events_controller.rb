@@ -23,6 +23,8 @@ class EventsController < ApplicationController
 
   def show
     @event =  Event.find(params[:id])
+    @guestlist = Guestlist.find_by_event_id(params[:event_id])
+
   end
 
   def edit
