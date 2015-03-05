@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :guestlists, through: :events
 
+  validates_associated :events, :guestlists
+
   def self.create_from_omniauth(params)
     attributes = {
       email: params['info']['email'],
