@@ -9,7 +9,7 @@
 <%= f.text_field :description %>
 
 <%= f.label :quantity %>
-<%= f.number_field :quantity %>
+<%= f.number_field :quantity, min: 1 %>
 
 <%= f.submit "Create" %>
 <% end %>
