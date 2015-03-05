@@ -2,7 +2,15 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  root to: "users#index"
+  # we should change this to a welcome page of some kind.
+  devise_scope :user do
+    authenticated :user do
+      root to: "users#show", :as => "user_profile"
+    end
+    unauthenticated do
+      root to: "devise/sessions#new"
+    end
+  end
 
   resources :users, except: [:new, :create, :destroy] do
     resources :events do
