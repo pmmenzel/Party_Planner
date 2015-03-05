@@ -44,8 +44,7 @@ ActiveRecord::Schema.define(version: 20150226221038) do
   create_table "items", force: true do |t|
     t.string   "name"
     t.integer  "quantity"
-    t.text     "item_description"
-    t.string   "type"
+    t.text     "description"
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
