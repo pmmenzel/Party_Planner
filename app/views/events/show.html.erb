@@ -2,3 +2,5 @@
 <button ><%= link_to "Delete Event", user_event_path(@event.user, @event), :method => :delete %></button>
 <button><%= link_to "Edit Event Details", edit_user_event_path(@event.user, @event) %></button>
 <button><%= link_to "New item", new_user_event_item_path(@event.user, @event) %></button>
+
+<%= render "guestlist/show_guestlist" %>
