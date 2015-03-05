@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :create, :destroy] do
     resources :events do
       resources :items
-      get '/guestlist' => 'guestlist#show_guestlist'
     end
   end
 
