@@ -10,12 +10,12 @@
 <%= f.text_field :location %>
 
 <%= f.label :public_party %>
-  <%= f.label "No" %>
 
-  <%= f.radio_button :public_party, "0" %>
-  <%= f.label "Yes" %>
+<%= f.label "No" %>
+<%= f.radio_button :public_party, "0" %>
 
-  <%= f.radio_button :public_party, "1" %>
+<%= f.label "Yes" %>
+<%= f.radio_button :public_party, "1" %>
 
 <%= f.submit "Create" %>
 <% end %>
