@@ -1,5 +1,5 @@
 <h1><%= @user.first_name%> <%=@user.last_name %> Profile</h1>
-<button><%= link_to "Edit Profile", edit_user_registration_path(@user) %></button>
+<button><%= link_to "Edit Profile", edit_user_path(@user) %></button>
 <button><%= link_to "New Event", new_user_event_path(@user) %></button>
 
 <% @user.events.each do |event| %>
