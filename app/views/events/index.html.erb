@@ -1,8 +1,7 @@
-<h1>here</h1>
-<button ><%= link_to "Create Event", new_user_event_path(@user)%></button>
-<% @events.each do |event| %>
-<%= event.name %><br/>
+<h1><%= "#{@user.first_name}'s Event Page" %></h1>
+<button ><%= link_to "Create Event", new_user_event_path(@user)%></button><br/>
+<% @user.events.each do |event| %>
+<h3><%= link_to event.name, user_event_path(event.user, event) %></h3>
 <button ><%= link_to "Delete Event", user_event_path(event.user, event), :method => :delete %></button>
-<button ><%= link_to "Edit Event", edit_user_event_path(event.user, event), :method => :get %></button>
-
+<button ><%= link_to "Edit Event", edit_user_event_path(event.user, event), :method => :get %></button><br/>
 <% end %>
