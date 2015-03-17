@@ -3,6 +3,9 @@ class EventsController < ApplicationController
   def index
     @events = Event.where(user_id: current_user.id)
     @user = current_user
+    if @user.id != params[:user_id].to_i
+      redirect_to user_events_path(@user)
+    end
   end
 
   def new
