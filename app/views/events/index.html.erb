@@ -1,5 +1,5 @@
 <h1>here</h1>
-
+<button ><%= link_to "Create Event", new_user_event_path(@user)%></button>
 <% @events.each do |event| %>
 <%= event.name %><br/>
 <button ><%= link_to "Delete Event", user_event_path(event.user, event), :method => :delete %></button>
