@@ -29,6 +29,13 @@ class EventsController < ApplicationController
     @event =  Event.find(params[:id])
   end
 
+  def update
+    @event =  Event.find(params[:id])
+    user = params[:id]
+    @event.update_attributes(event_params)
+    redirect_to user_event_path(user,@event)
+  end
+
   def destroy
     @event =  Event.find(params[:id])
     user =  params[:user_id]
