@@ -31,6 +31,8 @@ gem 'domp'
 
 gem 'awesome_print'
 
+gem 'rubocop', require: false
+
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
