@@ -1,11 +1,10 @@
 class EventsController < ApplicationController
+  include EventHelper
 
   def index
     @events = Event.where(user_id: current_user.id)
     @user = current_user
-    if @user.id != params[:user_id].to_i
-      redirect_to user_events_path(@user)
-    end
+    user_valid_index
   end
 
   def new
@@ -28,7 +27,7 @@ class EventsController < ApplicationController
     @event =  Event.find(params[:id])
     @guestlist = Guestlist.find_by_event_id(@event.id)
     @items = Item.where(event_id: params[:id])
-    p @items
+    user_valid_show(@event)
   end
 
   def edit
