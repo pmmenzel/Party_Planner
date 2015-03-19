@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
+  include EventHelper
+  before_filter :authenticate_user!
 
   def index
     @events = Event.where(user_id: current_user.id)
+    @user = current_user
+    user_valid_index
   end
 
   def new
@@ -23,18 +27,27 @@ class EventsController < ApplicationController
   def show
     @event =  Event.find(params[:id])
     @guestlist = Guestlist.find_by_event_id(@event.id)
+    @items = Item.where(event_id: params[:id])
+    user_valid_show(@event)
   end
 
   def edit
     @event =  Event.find(params[:id])
   end
 
+  def update
+    @event =  Event.find(params[:id])
+    user = params[:id]
+    @event.update_attributes(event_params)
+    redirect_to user_event_path(user,@event)
+  end
+
   def destroy
     @event =  Event.find(params[:id])
     user =  params[:user_id]
     if @event.guestlist_id
-    guestlist = Guestlist.find(@event.guestlist_id)
-    guestlist.destroy
+      guestlist = Guestlist.find(@event.guestlist_id)
+      guestlist.destroy
     end
     @event.destroy
     redirect_to user_events_path(user)

@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params.merge(event_id: params[:event_id]))
     if @item.save
-      redirect_to user_event_items_path(@item.event.user, @item.event)
+      redirect_to user_event_path(@item.event.user, @item.event)
     else
       render :new
     end
