@@ -25,6 +25,10 @@ class Ability
             guestlist.event.user == user
         end
 
+        can :destroy, Item do |item|
+            item.user == user
+        end
+
       end
     #
     # The first argument to `can` is the action you are giving the user

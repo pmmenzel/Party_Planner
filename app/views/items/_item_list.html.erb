@@ -9,6 +9,10 @@
     <td><%= item.name %></td>
     <td><%= item.quantity %></td>
     <td><%= item.description %></td>
+    <% if can? :destroy, item %>
+    <td><%= link_to "Delete Item", user_event_item_path(item.event.user, item.event, item), :method => :delete %></td>
+    <% end %>
+
   </tr>
   <% end %>
 </table>
