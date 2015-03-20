@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     @event =  Event.find(params[:id])
     @guestlist = Guestlist.find_by_event_id(@event.id)
     @items = Item.where(event_id: params[:id])
-    user_valid_show(@event)
+    # user_valid_show(@event)
   end
 
   def edit
