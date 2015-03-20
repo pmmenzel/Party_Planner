@@ -29,6 +29,10 @@ class Ability
             item.user == user
         end
 
+        can :update, Item do |item|
+            item.user == user
+        end
+
       end
     #
     # The first argument to `can` is the action you are giving the user

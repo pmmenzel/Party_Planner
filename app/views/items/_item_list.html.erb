@@ -6,7 +6,7 @@
   </tr>
   <% @items.each do |item| %>
   <tr>
-    <td><%= item.name %></td>
+    <td><%= link_to item.name, user_event_item_path(item.event.user, item.event, item)%></td>
     <td><%= item.quantity %></td>
     <td><%= item.description %></td>
     <% if can? :destroy, item %>
