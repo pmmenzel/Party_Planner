@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'guestlists/invite'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   # we should change this to a welcome page of some kind.
