@@ -21,6 +21,10 @@ class Ability
             event.user == user
         end
 
+        can :invite, Guestlist do |guestlist|
+            guestlist.event.user == user
+        end
+
       end
     #
     # The first argument to `can` is the action you are giving the user
