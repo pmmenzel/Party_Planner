@@ -7,7 +7,7 @@
 <% end %>
 <button><%= link_to "New item", new_user_event_item_path(@event.user, @event) %></button>
 <% if can? :invite, @guestlist %>
-  <%= render "guestlists/invite_guest" %>
+<button><%= link_to "Guestlist", invite_list_user_event_guestlists_path(@event.user, @event) %></button>
 <% end %>
 <%= render "guestlists/show_guestlist" %>
 <%= render "items/item_list" %>
