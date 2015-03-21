@@ -16,11 +16,13 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new, :create, :destroy] do
     resources :events do
-      member do
-        get 'invite_list'
-        post 'invite'
-      end
       resources :items
+      resources :guestlists, only: [] do
+        collection do
+          get 'invite_list'
+          post 'invite'
+        end
+      end
     end
   end
 
