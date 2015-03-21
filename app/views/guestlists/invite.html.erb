@@ -1,2 +1,5 @@
-<h1>Guestlists#invite</h1>
-<p>Find me in app/views/guestlists/invite.html.erb</p>
+<h1>Guestlists Invite List</h1>
+<% @guestlist.users.each do |user| %>
+<% "first_name #{user.first_name}" %>
+<% end %>
+
