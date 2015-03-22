@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :create, :destroy] do
     resources :events do
       resources :items
-      resources :guestlists, only: [] do
+      resources :guestlists, only: [:index] do
         collection do
           get 'invite_list'
           post 'invite'
