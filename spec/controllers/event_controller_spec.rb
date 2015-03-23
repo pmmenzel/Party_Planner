@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe EventController, type: :controller do
+# RSpec.describe EventController, type: :controller do
 
-end
+# end
