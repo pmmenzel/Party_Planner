@@ -4,12 +4,12 @@ class GuestlistsController < ApplicationController
     @guestlist = event.guestlist
   end
 
-  def invite_list
+  def new_guest
     event = Event.find(params[:event_id])
     @guestlist = event.guestlist
   end
 
-  def invite
+  def create_guest
     @user = User.new()
   end
 end
