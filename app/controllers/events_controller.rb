@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.where(user_id: current_user.id)
     @user = current_user
-    user_valid_index
+    # user_valid_index   ##purposely kept in. Other method to prevent users from going to any restful route if can can doesn't work.
   end
 
   def new
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     @event =  Event.find(params[:id])
     @guestlist = Guestlist.find_by_event_id(@event.id)
     @items = Item.where(event_id: params[:id])
-    user_valid_show(@event)
+    # user_valid_show(@event)   ##purposely kept in. Other method to prevent users from going to any restful route if can can doesn't work.
   end
 
   def edit

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # get 'guestlists/invite'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   # we should change this to a welcome page of some kind.
@@ -15,6 +17,12 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :create, :destroy] do
     resources :events do
       resources :items
+      resources :guestlists, only: [:index] do
+        collection do
+          get 'invite_list'
+          post 'invite'
+        end
+      end
     end
   end
 
@@ -35,16 +43,16 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    # resources :products do
+    #   member do
+    #     get 'short'
+    #     post 'toggle'
+    #   end
+
+    #   collection do
+    #     get 'sold'
+    #   end
+    # end
 
   # Example resource route with sub-resources:
   #   resources :products do

@@ -33,6 +33,10 @@ gem 'awesome_print'
 
 gem 'rubocop', require: false
 
+gem 'cancancan', '~> 1.10'
+
+gem 'faker'
+
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
