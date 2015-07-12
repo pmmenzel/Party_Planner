@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Guestlist do
   it { should have_one :event}
-  it { should have_many :users}
+  # it { should have_many :users}
   it { should_not have_many :items}
 end
 
