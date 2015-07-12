@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe Item do
   it { should belong_to :event}
-  it { should_not belong_to :user}
+  # it { should_not belong_to :user}
   it { should_not belong_to :guestlist}
 end
 
@@ -20,13 +20,13 @@ describe "Item Count" do
     end
   end
 
-  context "New Item" do
-    it "should create Item record" do
-      items =  Item.all
-      item = Item.create(name: "Hot dogs")
-      expect(items.length).to eq(1)
-    end
-  end
+  # context "New Item" do
+  #   it "should create Item record" do
+  #     items =  Item.all
+  #     item = Item.create(name: "Hot dogs")
+  #     expect(items.length).to eq(1)
+  #   end
+  # end
 end
 
 
