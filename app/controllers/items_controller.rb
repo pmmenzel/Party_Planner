@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :load_event
+
 
   def index
     @items = Item.where(event_id: params[:event_id])
-    @event = Event.find(params[:event_id])
   end
 
   def new
@@ -48,5 +50,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :quantity, :description, :event_id)
+  end
+
+  def load_event
+    @event = Event.find(params[:event_id])
   end
 end

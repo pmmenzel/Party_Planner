@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150323070857) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authentication_providers", force: true do |t|
+  create_table "authentication_providers", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150323070857) do
 
   add_index "authentication_providers", ["name"], name: "index_name_on_authentication_providers", using: :btree
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "date"
     t.string   "location"
@@ -35,20 +35,20 @@ ActiveRecord::Schema.define(version: 20150323070857) do
     t.datetime "updated_at"
   end
 
-  create_table "guestlists", force: true do |t|
+  create_table "guestlists", force: :cascade do |t|
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "guestlists_users", force: true do |t|
+  create_table "guestlists_users", force: :cascade do |t|
     t.integer  "guestlist_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "items", force: true do |t|
+  create_table "items", force: :cascade do |t|
     t.string   "name"
     t.integer  "quantity"
     t.text     "description"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150323070857) do
     t.integer  "user_id"
   end
 
-  create_table "user_authentications", force: true do |t|
+  create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "authentication_provider_id"
     t.string   "uid"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150323070857) do
   add_index "user_authentications", ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id", using: :btree
   add_index "user_authentications", ["user_id"], name: "index_user_authentications_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

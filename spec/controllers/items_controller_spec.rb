@@ -1,7 +1,23 @@
 require 'rails_helper'
 
-# RSpec.describe ItemsController, type: :controller do
+describe ItemsController do
+  let(:user) { FactoryGirl.create(:user) }
 
+
+  describe "index" do
+    it{
+      get :index
+      expect(response).to eq(200)
+    }
+
+    it{
+      sign_in(user)
+      get :index
+
+      expect(assigns(:items).to_a).to be_nil
+    }
+
+  end
 #   describe "GET #index" do
 #     it "returns http success" do
 #       get :index
@@ -51,4 +67,4 @@ require 'rails_helper'
 #     end
 #   end
 
-# end
+end
