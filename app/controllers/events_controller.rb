@@ -18,7 +18,7 @@ class EventsController < ApplicationController
       guestlist = Guestlist.create(event_id: @event.id)
       @event.guestlist_id = guestlist.id
       @event.save
-      redirect_to user_event_path(@event.user, @event)
+      redirect_to event_path(@event)
     else
       render :new
     end

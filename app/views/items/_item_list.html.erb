@@ -6,11 +6,11 @@
   </tr>
   <% @items.each do |item| %>
   <tr>
-    <td><%= link_to item.name, user_event_item_path(item.event.user, item.event, item)%></td>
+    <td><%= link_to item.name, event_item_path(item.event, item)%></td>
     <td><%= item.quantity %></td>
     <td><%= item.description %></td>
     <% if can? :destroy, item %>
-    <td><%= link_to "Delete Item", user_event_item_path(item.event.user, item.event, item), :method => :delete %></td>
+    <td><%= link_to "Delete Item", event_item_path(item.event, item), :method => :delete %></td>
     <% end %>
 
   </tr>
