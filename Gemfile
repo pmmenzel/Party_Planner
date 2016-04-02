@@ -34,6 +34,7 @@ gem 'cancancan', '~> 1.10'
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
+gem 'foundation-rails'
 
 gem 'actionmailer-with-request' # Gives ActionMailer access to routes
 gem 'httparty' # Integrations
@@ -43,8 +44,6 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen'
-  gem 'better_errors' # Adds /__better_errors
-  gem 'meta_request' # Required for /__better_errors
 end
 
 
@@ -56,6 +55,9 @@ group :development, :test do
   gem 'parallel_tests'
   gem 'bullet'
   gem 'pry'
+  gem 'better_errors' # Adds /__better_errors
+  gem 'meta_request' # Required for /__better_errors
+  gem 'binding_of_caller'
 end
 
 group :test do
