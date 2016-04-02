@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_event
+  before_action :load_item, only: [:show, :edit, :destroy]
 
 
   def index
