@@ -11,7 +11,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
-    binding.pry
     super
   end
 
