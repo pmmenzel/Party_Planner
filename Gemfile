@@ -31,6 +31,7 @@ gem 'rubocop', require: false
 
 # gem 'cancancan', '~> 1.10'
 gem 'rolify'
+gem 'cancancan', '~> 1.10'
 
 gem "omniauth"
 gem "omniauth-google-oauth2"
@@ -39,7 +40,6 @@ gem 'foundation-rails'
 
 gem 'actionmailer-with-request' # Gives ActionMailer access to routes
 gem 'httparty' # Integrations
-
 
 group :development do
   gem 'spring'
@@ -70,6 +70,5 @@ group :test do
   gem 'webmock'
   gem 'simplecov', require: false
   gem 'poltergeist'
-
 end
 
