@@ -29,7 +29,8 @@ gem 'domp'
 
 gem 'rubocop', require: false
 
-gem 'cancancan', '~> 1.10'
+# gem 'cancancan', '~> 1.10'
+gem 'rolify'
 
 gem "omniauth"
 gem "omniauth-google-oauth2"
@@ -49,6 +50,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-retry'
   gem 'awesome_print'
   gem 'factory_girl_rails'
   gem 'faker'
@@ -67,6 +69,7 @@ group :test do
   gem 'database_cleaner'
   gem 'webmock'
   gem 'simplecov', require: false
+  gem 'poltergeist'
 
 end
 
