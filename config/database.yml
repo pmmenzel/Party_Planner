@@ -1,9 +1,8 @@
 default: &default
   adapter: postgresql
-  encoding: unicode
-  timeout: 5000
-  host: localhost
+  database: db/development
   pool: 5
+  timeout: 5000
   port: 5432
 
 development:
@@ -18,5 +17,5 @@ test:
 production:
   <<: *default
   database: Party_Planner_production
-  username: Party_Planner
-  password: <%= ENV['PARTY_PLANNER_DATABASE_PASSWORD'] %>
+  # username: Party_Planner
+  # password: <%= ENV['PARTY_PLANNER_DATABASE_PASSWORD'] %>

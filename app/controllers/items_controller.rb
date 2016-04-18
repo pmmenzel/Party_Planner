@@ -13,10 +13,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params.merge(event_id: params[:event_id]))
-    @item.user = current_user
-    if @item.save
-      redirect_to event_path(@item.event)
+    item = Item.new(item_params)
+    item.user = current_user
+    if item.save
+      redirect_to event_path(item.event)
     else
       render :new
     end
@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to event_items_path(@item.event)
     else
+      flash[:error] = "Unable to update Item!  Please try again."
       render :edit
     end
   end
@@ -49,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   def load_event
-    @event = Event.find(params[:event_id])
+    @event = Item.find(params[:event_id])
   end
 
   def load_item
