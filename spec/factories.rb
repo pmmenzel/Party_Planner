@@ -20,8 +20,19 @@ FactoryGirl.define do
     public_party  [true, false].sample
   end
 
-  factory :guestlist do
+  items = %w(Drinks Food Plates)
+
+  factory :item do
+    association :event
+    name        "#{items.sample}"
+    quantity    1
   end
+
+  factory :guestlist do
+    association :event
+
+  end
+
 
 
 end
