@@ -1,21 +1,23 @@
 default: &default
   adapter: postgresql
-  database: db/development
   pool: 5
   timeout: 5000
   port: 5432
+  # username: dev
+  # password: dev
 
 development:
   <<: *default
-  database: Party_Planner_development
+  database: db/development
+  host: localhost
 
 test:
   <<: *default
-  database: Party_Planner_test
+  database: db/test
 
 
 production:
   <<: *default
-  database: Party_Planner_production
+  database: Party_planner
   # username: Party_Planner
   # password: <%= ENV['PARTY_PLANNER_DATABASE_PASSWORD'] %>
