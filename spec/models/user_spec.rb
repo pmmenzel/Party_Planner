@@ -7,9 +7,7 @@ describe User do
 end
 
 describe "User Count" do
-before(:each) do
-  User.destroy_all
-end
+
   context "Empty Users Table " do
     it "should not have any users" do
       users =  User.all
