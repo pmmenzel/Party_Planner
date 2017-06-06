@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.4'
+
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
@@ -65,7 +67,7 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers'#, require: false
   gem 'database_cleaner'
   gem 'webmock'
   gem 'simplecov', require: false
