@@ -49,7 +49,7 @@ end
 
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.6.0'
   gem 'rspec-retry'
   gem 'awesome_print'
   gem 'factory_girl_rails'
