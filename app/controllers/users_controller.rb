@@ -1,22 +1,18 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :load_user, only: [:show, :edit, :update]
 
   def index
   end
 
   def show
-    @user = current_user
   end
 
   def edit
-    @user = current_user
   end
 
- def update
-    user = current_user
-    user.update_attributes(user_params)
-    if user.save
-      redirect_to user_url(user)
+  def update
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user)
     else
       render :edit
     end
@@ -26,5 +22,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :type)
+  end
+
+  def load_user
+    @user = current_user
   end
 end

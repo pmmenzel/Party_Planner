@@ -1,21 +1,23 @@
 <%= form_for @event, url: {action: "create"} do |f| %>
-
+<br>
 <%= f.label :name %>
 <%= f.text_field :name %>
-
+<br>
 <%= f.label :date %>
 <%= f.datetime_select :date %>
-
+<br>
 <%= f.label :location %>
 <%= f.text_field :location %>
-
+<br>
 <%= f.label :public_party %>
-
+<br>
 <%= f.label "No" %>
 <%= f.radio_button :public_party, "0", checked: true %>
 
 <%= f.label "Yes" %>
 <%= f.radio_button :public_party, "1" %>
 
+<br>
+<br>
 <%= f.submit "Create" %>
 <% end %>

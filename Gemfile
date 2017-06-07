@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.4'
+
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
@@ -29,41 +31,46 @@ gem 'domp'
 
 gem 'rubocop', require: false
 
+# gem 'cancancan', '~> 1.10'
+gem 'rolify'
 gem 'cancancan', '~> 1.10'
 
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
+gem 'foundation-rails'
 
 gem 'actionmailer-with-request' # Gives ActionMailer access to routes
 gem 'httparty' # Integrations
-
 
 group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen'
-  gem 'better_errors' # Adds /__better_errors
-  gem 'meta_request' # Required for /__better_errors
 end
 
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.6.0'
+  gem 'rspec-retry'
   gem 'awesome_print'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'parallel_tests'
   gem 'bullet'
   gem 'pry'
+  gem 'better_errors' # Adds /__better_errors
+  gem 'meta_request' # Required for /__better_errors
+  gem 'binding_of_caller'
 end
 
 group :test do
   gem 'capybara'
-  gem 'shoulda-matchers', require: false
+  gem 'capybara-screenshot'
+  gem 'shoulda-matchers'#, require: false
   gem 'database_cleaner'
   gem 'webmock'
   gem 'simplecov', require: false
-
+  gem 'poltergeist'
 end
 

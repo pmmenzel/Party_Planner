@@ -23,3 +23,5 @@
   guestlist.save
 
 end
+
+User.create!(first_name: 'Patrick', last_name: 'Menzel', email: 'patrick@test.com', password: 'password')
