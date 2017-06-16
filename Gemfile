@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.4.1'
 
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
-gem 'rails', '4.2.2'
+gem 'rails', '4.2.8'
 
 gem 'pg'
 
