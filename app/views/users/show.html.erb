@@ -3,7 +3,7 @@
 <button><%= link_to "New Event", new_event_path(user_id: @user.id) %></button>
 
 <% @user.events.each do |event| %>
-<h3><%= link_to event.name, user_event_path(event.user, event) %></h3>
+<h3><%= link_to event.name, event_path(event.user, event) %></h3>
 <td><%= event.date.strftime("%A, %B %d, %Y at %I:%M%p") %></td><br>
 <td><%= event.location %></td>
 <% end %>

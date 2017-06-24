@@ -4,14 +4,15 @@ class UsersController < ApplicationController
   def index
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def edit
   end
 
   def update
-    if @user.update_attributes(user_params)
+    binding.pry
+    if @user.update(user_params)
       redirect_to user_path(@user)
     else
       render :edit
@@ -25,6 +26,6 @@ class UsersController < ApplicationController
   end
 
   def load_user
-    @user = current_user
+    @user ||= current_user
   end
 end

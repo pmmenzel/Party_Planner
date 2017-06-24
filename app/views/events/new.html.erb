@@ -4,7 +4,7 @@
 <%= f.text_field :name %>
 <br>
 <%= f.label :date %>
-<%= f.datetime_select :date %>
+<%= f.datetime_field :date, placeholder: 'mm/dd/yyyy', data:{ provide:'datepicker' } %>
 <br>
 <%= f.label :location %>
 <%= f.text_field :location %>
@@ -21,3 +21,10 @@
 <br>
 <%= f.submit "Create" %>
 <% end %>
+
+<script>
+
+$(function() {
+  $('.datepicker').datepicker();
+});
+</script>
