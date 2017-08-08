@@ -7,7 +7,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'rails', '4.2.8'
 
-gem 'pg'
+# use this version until they fix the constant erros on pg 0.21
+gem 'pg', '0.20'
 
 gem 'activerecord-session_store'
 

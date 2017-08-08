@@ -3,8 +3,6 @@ default: &default
   pool: 5
   timeout: 5000
   port: 5432
-  # username: dev
-  # password: dev
 
 development:
   <<: *default
@@ -13,11 +11,11 @@ development:
 
 test:
   <<: *default
-  database: db/test
+  database: test
 
 
 production:
   <<: *default
-  database: Party_planner
-  # username: Party_Planner
-  # password: <%= ENV['PARTY_PLANNER_DATABASE_PASSWORD'] %>
+  database: party_planner
+  username: party_Planner
+  password: <%= ENV['PARTY_PLANNER_DATABASE_PASSWORD'] %>

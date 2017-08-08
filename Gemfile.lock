@@ -182,7 +182,7 @@ GEM
       parallel
     parser (2.4.0.0)
       ast (~> 2.2)
-    pg (0.21.0)
+    pg (0.20.0)
     poltergeist (1.15.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -350,7 +350,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   parallel_tests
-  pg
+  pg (= 0.20)
   poltergeist
   pry
   rails (= 4.2.8)
@@ -373,4 +373,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
