@@ -1,0 +1,10 @@
+%h1= @event.name
+- if can? :destroy, @event
+  %button= link_to "Delete Event", event_path(@event), :method => :delete
+- if can? :update, @event
+  %button= link_to "Edit Event Details", edit_event_path( @event)
+%button= link_to "New item", new_event_item_path(@event)
+- if can? :invite, @guestlist
+  %button= link_to "Guestlist", event_guestlists_path(@event)
+= render "guestlists/show_guestlist"
+= render "items/item_list"
