@@ -59,6 +59,7 @@ GEM
     bullet (5.5.1)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
+    byebug (9.1.0)
     callsite (0.0.11)
     cancancan (1.17.0)
     capybara (2.14.3)
@@ -197,10 +198,12 @@ GEM
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
-    pry (0.10.4)
+    pry (0.11.0)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
-      slop (~> 3.4)
+    pry-byebug (3.5.0)
+      byebug (~> 9.1)
+      pry (~> 0.10)
     public_suffix (2.0.5)
     rack (1.6.8)
     rack-contrib (1.4.0)
@@ -287,7 +290,6 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.1)
-    slop (3.6.0)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -355,7 +357,7 @@ DEPENDENCIES
   parallel_tests
   pg (= 0.21)
   poltergeist
-  pry
+  pry-byebug
   rails (= 4.2.8)
   rolify
   rspec-rails (~> 3.6.0)

@@ -62,7 +62,7 @@ group :development, :test do
   gem 'faker'
   gem 'parallel_tests'
   gem 'bullet'
-  gem 'pry'
+  gem 'pry-byebug'
   gem 'better_errors' # Adds /__better_errors
   gem 'meta_request' # Required for /__better_errors
   gem 'binding_of_caller'
