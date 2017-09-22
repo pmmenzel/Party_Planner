@@ -1,0 +1,14 @@
+%h1
+  = @item.name
+%button= link_to "Delete Item", user_event_item_path(@item.event.user, @item.event, @item), :method => :delete
+%button= link_to "Edit Item", edit_user_event_item_path(@item.event.user, @item.event, @item), :method => :get
+%li
+  DESCRIPTION:
+  %ul
+    %li
+      = @item.description
+%li
+  QUANTITY:
+  %ul
+    %li
+      = @item.quantity

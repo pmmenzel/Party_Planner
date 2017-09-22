@@ -1,0 +1,12 @@
+%h1
+  = @user.first_name
+  = @user.last_name
+  Profile
+%button= link_to "Edit Profile", edit_user_path(@user)
+%button= link_to "New Event", new_event_path(user_id: @user.id)
+- @user.events.each do |event|
+  %h3= link_to event.name, event_path(event.user, event)
+  %td= event.date.strftime("%A, %B %d, %Y at %I:%M%p")
+  %br/
+  %td= event.location
+= render "devise/login_logout"

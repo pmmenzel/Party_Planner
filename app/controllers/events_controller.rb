@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    binding.pry
     @event = Event.new(event_params.merge(user_id: current_user.id))
     if @event.save
       guestlist = Guestlist.create(event_id: @event.id)

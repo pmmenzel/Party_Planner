@@ -1,0 +1,8 @@
+%h1
+  = @event.name
+  \: Items List
+- @items.each do |item|
+  = link_to item.name, user_event_item_path(item.event.user, item.event, item)
+  %br/
+  %button= link_to "Delete Item", user_event_item_path(item.event.user, item.event, item), :method => :delete
+  %button= link_to "Edit Item", edit_user_event_item_path(item.event.user, item.event, item), :method => :get

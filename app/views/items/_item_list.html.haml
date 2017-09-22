@@ -1,0 +1,12 @@
+%table
+  %tr
+    %th Item
+    %th Quantity
+    %th Description
+  - @items.each do |item|
+    %tr
+      %td= link_to item.name, event_item_path(item.event, item)
+      %td= item.quantity
+      %td= item.description
+      - if can? :destroy, item
+        %td= link_to "Delete Item", event_item_path(item.event, item), :method => :delete

@@ -8,7 +8,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails', '4.2.8'
 
 # use this version until they fix the constant erros on pg 0.21
-gem 'pg', '0.20'
+gem 'pg', '0.21'
 
 gem 'activerecord-session_store'
 
@@ -42,14 +42,16 @@ gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem 'foundation-rails'
 
+gem 'haml-rails', '~> 1.0'
+
 gem 'actionmailer-with-request' # Gives ActionMailer access to routes
 gem 'httparty' # Integrations
 
-group :development do
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'spring-watcher-listen'
-end
+# group :development do
+#   gem 'spring'
+#   gem 'spring-commands-rspec'
+#   gem 'spring-watcher-listen'
+# end
 
 
 group :development, :test do
