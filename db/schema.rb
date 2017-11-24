@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323070857) do
+ActiveRecord::Schema.define(version: 20170923214228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,22 +30,16 @@ ActiveRecord::Schema.define(version: 20150323070857) do
     t.string   "location"
     t.boolean  "public_party"
     t.integer  "user_id"
-    t.integer  "guestlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.time     "start_at"
+    t.time     "end_at"
+    t.string   "token"
   end
 
-  create_table "guestlists", force: :cascade do |t|
-    t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "guestlists_users", force: :cascade do |t|
-    t.integer  "guestlist_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "events_users", id: false, force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "user_id",  null: false
   end
 
   create_table "items", force: :cascade do |t|

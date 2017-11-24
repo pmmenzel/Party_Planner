@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-  has_many :events
-  has_and_belongs_to_many :guestlists#, through: :events
+  has_and_belongs_to_many :events
   has_many :items
 
-  validates_associated :events, :guestlists
+  # why do I need this if I make the association above
+  # validates_associated :events,
 
   def self.create_from_omniauth(params)
     attributes = {

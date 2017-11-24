@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    action_access (0.1.1)
+      rails (>= 4.1)
     actionmailer (4.2.8)
       actionpack (= 4.2.8)
       actionview (= 4.2.8)
@@ -61,7 +63,6 @@ GEM
       uniform_notifier (~> 1.10.0)
     byebug (9.1.0)
     callsite (0.0.11)
-    cancancan (1.17.0)
     capybara (2.14.3)
       addressable
       mime-types (>= 1.16)
@@ -242,7 +243,6 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rolify (5.1.0)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -328,13 +328,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_access
   actionmailer-with-request
   activerecord-session_store
   awesome_print
   better_errors
   binding_of_caller
   bullet
-  cancancan (~> 1.10)
   capybara
   capybara-screenshot
   coffee-rails (~> 4.0.0)
@@ -359,7 +359,6 @@ DEPENDENCIES
   poltergeist
   pry-byebug
   rails (= 4.2.8)
-  rolify
   rspec-rails (~> 3.6.0)
   rspec-retry
   rubocop

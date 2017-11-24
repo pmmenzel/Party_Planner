@@ -33,9 +33,9 @@ gem 'domp'
 
 gem 'rubocop', require: false
 
+# gem 'rolify'
 # gem 'cancancan', '~> 1.10'
-gem 'rolify'
-gem 'cancancan', '~> 1.10'
+gem 'action_access'
 
 gem "omniauth"
 gem "omniauth-google-oauth2"

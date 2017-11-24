@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe User do
   it { should have_many :events}
-  # it { should have_many :guestlists}
   # it { should_not have_many :items}
 end
 

@@ -1,6 +1,5 @@
 class Event < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :guestlist
+  has_and_belongs_to_many :user
   has_many :items
 
   validates :name, :date, :location, :presence => true

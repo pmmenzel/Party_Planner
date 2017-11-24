@@ -7,7 +7,6 @@ FactoryGirl.define do
     password      'password'
     factory :users_with_events do
       after :create do |user|
-        FactoryGirl.create :guestlist
         FactoryGirl.create :event, user: user
       end
     end
@@ -27,12 +26,4 @@ FactoryGirl.define do
     name        "#{items.sample}"
     quantity    1
   end
-
-  factory :guestlist do
-    association :event
-
-  end
-
-
-
 end

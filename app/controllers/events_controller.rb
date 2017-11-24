@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
   include EventHelper
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:show]
+  before_filter :allowed_guest?, only: [:show]
+
 
   def index
     @events = Event.where(user_id: current_user.id)
     @user = current_user
-    # user_valid_index   ##purposely kept in. Other method to prevent users from going to any restful route if can can doesn't work.
   end
 
   def new
@@ -13,12 +14,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @event = Event.new(event_params.merge(user_id: current_user.id))
+    @event = Event.new(event_params.merge(create_params))
     if @event.save
-      guestlist = Guestlist.create(event_id: @event.id)
-      @event.guestlist_id = guestlist.id
-      @event.save
       redirect_to event_path(@event)
     else
       render :new
@@ -27,7 +24,7 @@ class EventsController < ApplicationController
 
   def show
     @event =  Event.find(params[:id])
-    @guestlist = Guestlist.find_by_event_id(@event.id)
+    # TODO: What the fuck am I doing here.  params[:id] is for event, not item.  Dummy
     @items = Item.where(event_id: params[:id])
     # user_valid_show(@event)   ##purposely kept in. Other method to prevent users from going to any restful route if can can doesn't work.
   end
@@ -38,27 +35,39 @@ class EventsController < ApplicationController
 
   def update
     @event =  Event.find(params[:id])
-    user = params[:id]
     @event.update_attributes(event_params)
-    redirect_to user_event_path(user,@event)
+    redirect_to event_path(@event)
   end
 
   def destroy
     @event =  Event.find(params[:id])
-    user =  params[:user_id]
-    if @event.guestlist_id
-      guestlist = Guestlist.find(@event.guestlist_id)
-      guestlist.destroy
-    end
     @event.destroy
-    redirect_to user_events_path(user)
+    redirect_to events_path
   end
 
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :date, :location, :public_party, :user_id, :guestlist_id)
+    params.require(:event).permit(:name, :date, :location, :public_party, :user_id)
+  end
+
+  def party_date
+    params[:event].delete('date')
+  end
+
+  def create_params
+    token = SecureRandom.hex
+    user_id = current_user.id
+    { token: token, user_id: user_id }
+  end
+
+  def allowed_guest?
+    # grab all event users emails
+    # check if the auth_token parameter matches any users emails + event_token after being Base64.encode64.
+    # if so, return true, else return false and redirect with flash message.
+    # emails = event.users.pluck(:email)
+    # emails.any? {|email| params[:auth_token] == Base64.encode64(email+event.token) }
   end
 
 end
