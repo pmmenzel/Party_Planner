@@ -16,3 +16,5 @@
 - A user can add items using API call to "Supermarket API" OR "Grocery Server Developer API"
 - Add Google Maps API call for event location
 - App will automatically send email to guests X number of days before the event
+
+### API Features
