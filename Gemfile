@@ -58,7 +58,7 @@ group :development, :test do
   gem 'rspec-rails'#, '~> 3.6.0'
   gem 'rspec-retry'
   gem 'awesome_print'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'parallel_tests'
   gem 'bullet'
