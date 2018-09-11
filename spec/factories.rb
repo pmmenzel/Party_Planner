@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :user do
     first_name    {Faker::Name.first_name}
@@ -7,7 +7,7 @@ FactoryGirl.define do
     password      'password'
     factory :users_with_events do
       after :create do |user|
-        FactoryGirl.create :event, user: user
+        FactoryBot.create :event, user: user
       end
     end
   end

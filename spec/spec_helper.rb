@@ -61,7 +61,7 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::TestHelpers, type: :controller
   config.include ControllersSpecHelper, type: :controller
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   # use delayed job for testing
   config.around(:each, :delayed_job) do |example|
